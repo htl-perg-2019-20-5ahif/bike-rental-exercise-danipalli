@@ -1,0 +1,60 @@
+@host = http://localhost:5000/api
+
+###
+POST {{host}}/customers
+Content-Type: application/json
+
+{
+    "gender": 1,
+    "firstName": "Max",
+    "lastName": "Mustermann",
+    "birthday": "2000-05-23T18:25:43.511Z",
+    "Street": "Richard's Street",
+    "HouseNumber": "25",
+    "ZipCode": "6234",
+    "Town": "Example Town"
+}
+
+
+###
+POST {{host}}/bikes
+Content-Type: application/json
+
+{
+    "brand": "KTM FastTester",
+    "purchaseDate": "2015-06-15T13:16:47.511Z",
+    "rentalPriceFirstHour": 3,
+    "rentalPricePerAdditionalHour": 5,
+    "bikeCategory": 3
+}
+
+###
+POST {{host}}/rentals
+Content-Type: application/json
+
+{
+    "customerID": 2,
+    "bikeID": 2,
+    "rentalBegin": "2019-11-04T08:15:00.511Z"
+}
+
+###
+GET {{host}}/customers?nameFilter=term
+
+###
+GET {{host}}/customers
+
+###
+GET {{host}}/bikes
+
+# sort=priceFirstHour
+# sort=priceAdditionalHour
+# sort=purchaseDate
+
+###
+POST {{host}}/rentals/1/end
+
+
+###
+GET {{host}}/rentals
+
